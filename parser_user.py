@@ -9,16 +9,13 @@ from app import db
 from chat_parser import ChatParserMethods
 from models import TelegramUser, Chat, UserNames, Account
 
-chat_parsers = [
-    ChatParserMethods(StringSession(account.session), api_hash='5c10a75e8f9a21326fa191dc8dd4d916', api_id=933676) for
-    account in Account.query.filter_by(valid=True)]
-
-[chat_parser.connect() for chat_parser in chat_parsers]
-
 
 def add_list_chats(chats):
     for chat in chats:
-        chat_parser = random.choice(chat_parsers)
+        account = random.choice(Account.query.filter_by(valid=True).all())
+        chat_parser = ChatParserMethods(StringSession(account.session), api_hash='5c10a75e8f9a21326fa191dc8dd4d916',
+                                        api_id=933676)
+        chat_parser.connect()
         usernames_obj = [chat.username for chat in db.session.query(UserNames.chat).filter_by(username=chat).all()]
         if chat in usernames_obj:
             continue
@@ -47,7 +44,10 @@ def add_list_chats(chats):
 
 def add_chats_users(chats):
     for chat_obj in chats:
-        chat_parser = random.choice(chat_parsers)
+        account = random.choice(Account.query.filter_by(valid=True).all())
+        chat_parser = ChatParserMethods(StringSession(account.session), api_hash='5c10a75e8f9a21326fa191dc8dd4d916',
+                                        api_id=933676)
+        chat_parser.connect()
         users = chat_parser.parsing_chat(chat_obj=chat_obj)
         for user in tqdm(users):
             telegram_user_obj = TelegramUser.query.get(user.id)
