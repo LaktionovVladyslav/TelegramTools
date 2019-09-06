@@ -1,13 +1,16 @@
 from telethon import TelegramClient, sync
-from telethon.sessions import StringSession
 
 
 class ChatParserMethods(TelegramClient):
-    def parsing_chat(self, chat_username):
-        self.connect()
-        participants = self.get_participants(chat_username)
-        users = [user for user in participants if user.username]
-        return users
+    def parsing_chat(self, chat_id):
+        print(chat_id)
+        chat = self.get_entity(chat_id)
+        try:
+            participants = self.get_participants(chat)
+            users = [user for user in participants if user.username]
+            return users
+        except:
+            return []
 
 
 
