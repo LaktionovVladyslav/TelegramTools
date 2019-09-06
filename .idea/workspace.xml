@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96b79f24-a007-42d1-8217-76c473b148d4" name="Default Changelist" comment="Init commit">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/add_account_to_db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search_chats.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/try.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/0abcde47ab0f_.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/41826fb52d1a_.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/559a6bf48c08_.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/6081062abf82_.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/e1e43fda8a79_.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser_user.py" afterDir="false" />
-    </list>
+    <list default="true" id="96b79f24-a007-42d1-8217-76c473b148d4" name="Default Changelist" comment="Init commit" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,10 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parser_user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="1365">
               <caret line="91" column="97" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="97" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
@@ -106,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_account_to_db.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -321,12 +303,12 @@
       <workItem from="1567688681776" duration="7740000" />
       <workItem from="1567718176758" duration="5437000" />
       <workItem from="1567763689942" duration="1572000" />
-      <workItem from="1567765312905" duration="652000" />
+      <workItem from="1567765312905" duration="941000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21538000" />
+    <option name="totallyTimeSpent" value="21827000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -343,9 +325,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" weight="0.32891566" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5193133" side_tool="true" visible="true" weight="0.33614457" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4806867" visible="true" weight="0.33614457" />
-      <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.46781117" weight="0.28674698" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5200286" side_tool="true" visible="true" weight="0.33614457" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.47997138" visible="true" weight="0.33614457" />
+      <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.46709585" weight="0.28674698" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -458,16 +440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/add_account_to_db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -491,10 +463,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parser_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="1365">
           <caret line="91" column="97" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="97" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_account_to_db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
