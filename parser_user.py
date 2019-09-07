@@ -24,6 +24,14 @@ def add_list_chats(chats):
             chat_entity = chat_parser.get_entity(chat)
             if type(chat_entity) == User:
                 continue
+            chat_obj = Chat.query.get(chat_entity.id)
+            if not chat_obj:
+                chat_username_obj = UserNames.query.filter_by(username=chat_entity.username).first()
+                if not chat_username_obj:
+                    chat_username_obj = UserNames(username=chat_entity.username)
+                chat_obj = Chat(id=chat_entity.id, user_names=[chat_username_obj], title=chat_entity.title)
+                db.session.add(chat_obj)
+                db.session.commit()
         except UsernameInvalidError:
             print(f"UsernameInvalidError: {chat}")
             continue
@@ -34,15 +42,6 @@ def add_list_chats(chats):
         except Exception as e:
             print(f"Exception: {e}")
             continue
-
-        chat_obj = Chat.query.get(chat_entity.id)
-        if not chat_obj:
-            chat_username_obj = UserNames.query.filter_by(username=chat_entity.username).first()
-            if not chat_username_obj:
-                chat_username_obj = UserNames(username=chat_entity.username)
-            chat_obj = Chat(id=chat_entity.id, user_names=[chat_username_obj], title=chat_entity.title)
-            db.session.add(chat_obj)
-            db.session.commit()
 
 
 def add_chats_users(chats):
