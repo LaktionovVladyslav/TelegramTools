@@ -19,5 +19,5 @@ class ProductionConfig:
 
 
 class Config(object):
-    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://postgres:bossK@@82.117.245.176:9349/telegram"
+    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://postgres:bossK@@192.168.88.235/telegram"
     SQLALCHEMY_TRACK_MODIFICATIONS = False

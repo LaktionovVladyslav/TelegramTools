@@ -64,4 +64,6 @@ def add_chats_users(chats):
         db.session.commit()
 
 
-add_chats_users(chats=Chat.query.all())
+chats = open('usernames.txt').read().split('\n')
+# add_chats_users(chats=Chat.query.all())
+add_list_chats(chats=chats)
