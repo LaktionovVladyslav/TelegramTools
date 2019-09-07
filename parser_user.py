@@ -52,7 +52,7 @@ def add_chats_users(chats):
                                         api_id=933676)
         chat_parser.connect()
         users = chat_parser.parsing_chat(chat_obj=chat_obj)
-        for user in users:
+        for user in tqdm(users):
             telegram_user_obj = TelegramUser.query.get(user.id)
             if not telegram_user_obj:
                 telegram_user_obj = TelegramUser(user_id=user.id, phone_number=user.phone, username=user.username,
