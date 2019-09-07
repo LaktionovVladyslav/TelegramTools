@@ -11,7 +11,7 @@ from models import TelegramUser, Chat, UserNames, Account
 
 
 def add_list_chats(chats):
-    for chat in chats:
+    for chat in tqdm(chats):
         account = random.choice(Account.query.filter_by(valid=True).all())
         chat_parser = ChatParserMethods(StringSession(account.session), api_hash='5c10a75e8f9a21326fa191dc8dd4d916',
                                         api_id=933676)
@@ -43,13 +43,13 @@ def add_list_chats(chats):
 
 
 def add_chats_users(chats):
-    for chat_obj in chats:
+    for chat_obj in tqdm(chats):
         account = random.choice(Account.query.filter_by(valid=True).all())
         chat_parser = ChatParserMethods(StringSession(account.session), api_hash='5c10a75e8f9a21326fa191dc8dd4d916',
                                         api_id=933676)
         chat_parser.connect()
         users = chat_parser.parsing_chat(chat_obj=chat_obj)
-        for user in tqdm(users):
+        for user in users:
             telegram_user_obj = TelegramUser.query.get(user.id)
             if not telegram_user_obj:
                 telegram_user_obj = TelegramUser(user_id=user.id, phone_number=user.phone, username=user.username,
@@ -64,6 +64,10 @@ def add_chats_users(chats):
         db.session.commit()
 
 
-chats = open('usernames.txt').read().split('\n')
-# add_chats_users(chats=Chat.query.all())
-add_list_chats(chats=chats)
+mode = input('Добавить чаты (1), пользователей(2)')
+
+if mode == "1":
+    chats = open('usernames.txt').read().split('\n')
+    add_list_chats(chats=chats)
+else:
+    add_chats_users(chats=Chat.query.all())
