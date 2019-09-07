@@ -1,6 +1,7 @@
 import random
 import time
 
+from telethon.tl.types import User
 from tqdm import tqdm
 from telethon.errors import UsernameInvalidError, FloodWaitError
 from telethon.sessions import StringSession
@@ -21,6 +22,8 @@ def add_list_chats(chats):
             continue
         try:
             chat_entity = chat_parser.get_entity(chat)
+            if type(chat_entity) == User:
+                continue
         except UsernameInvalidError:
             print(f"UsernameInvalidError: {chat}")
             continue
