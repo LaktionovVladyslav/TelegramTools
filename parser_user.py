@@ -28,7 +28,7 @@ def add_list_chats(chats):
             print(f"UsernameInvalidError: {chat}")
             continue
         except FloodWaitError:
-            print(f"FloodWaitError: {chat_parser.get_my().id}")
+            print(f"FloodWaitError:")
             chat_parser.valid = False
             db.session.commit()
         except Exception as e:
