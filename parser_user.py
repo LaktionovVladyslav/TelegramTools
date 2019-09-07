@@ -50,7 +50,18 @@ def add_chats_users(chats):
         chat_parser = ChatParserMethods(StringSession(account.session), api_hash='5c10a75e8f9a21326fa191dc8dd4d916',
                                         api_id=933676)
         chat_parser.connect()
-        users = chat_parser.parsing_chat(chat_obj=chat_obj)
+        try:
+            users = chat_parser.parsing_chat(chat_obj=chat_obj)
+        except UsernameInvalidError:
+            print(f"UsernameInvalidError:")
+            continue
+        except FloodWaitError:
+            print(f"FloodWaitError:")
+            chat_parser.valid = False
+            db.session.commit()
+        except Exception as e:
+            print(f"Exception: {e}")
+            continue
         for user in tqdm(users):
             telegram_user_obj = TelegramUser.query.get(user.id)
             if not telegram_user_obj:
