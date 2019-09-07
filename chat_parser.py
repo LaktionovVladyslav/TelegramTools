@@ -12,6 +12,8 @@ class ChatParserMethods(TelegramClient):
                 return []
             users = [user for user in participants if user.username]
             return users
+        else:
+            return []
 
 
 
